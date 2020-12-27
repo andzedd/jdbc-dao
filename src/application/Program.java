@@ -59,6 +59,12 @@ public class Program {
         List<Department> departments = departmentDao.findAll();
         departments.forEach(i -> System.out.println(i));
 
+        System.out.println("\n========== TEST 8: departmentUpdate ==========");
+        dep = departmentDao.findById(6);
+        dep.setName("TestUpdate");
+        departmentDao.update(dep);
+        System.out.println("Update completed");
+
         sc.close();
     }
 }
