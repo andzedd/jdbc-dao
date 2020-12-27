@@ -23,5 +23,10 @@ public class Program {
         System.out.println("\n========== TEST 3: sellerFindAll ==========");
         sellers = sellerDao.findAll();
         sellers.forEach(i -> System.out.println(i));
+
+        System.out.println("\n========== TEST 4: sellerInsert ==========");
+        Seller newSeller = new Seller(null, "Greg", "greg@gmail.com", new Date(), 4000.0, dep);
+        sellerDao.insert(newSeller);
+        System.out.println("Inserted! New ID = " + newSeller.getId());
     }
 }
