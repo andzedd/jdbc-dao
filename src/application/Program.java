@@ -30,27 +30,34 @@ public class Program {
         sellers.forEach(i -> System.out.println(i));
 
         System.out.println("\n========== TEST 4: sellerInsert ==========");
-        Seller newSeller = new Seller(null, "Greg", "greg@gmail.com", new Date(), 4000.0, dep);
-        sellerDao.insert(newSeller);
-        System.out.println("Inserted! New ID = " + newSeller.getId());
+//        Seller newSeller = new Seller(null, "Greg", "greg@gmail.com", new Date(), 4000.0, dep);
+//        sellerDao.insert(newSeller);
+//        System.out.println("Inserted! New ID = " + newSeller.getId());
 
         System.out.println("\n========== TEST 5: sellerUpdate ==========");
-        seller = sellerDao.findById(1);
-        seller.setName("Martha Wayne");
-        sellerDao.update(seller);
-        System.out.println("Update completed");
+//        seller = sellerDao.findById(1);
+//        seller.setName("Martha Wayne");
+//        sellerDao.update(seller);
+//        System.out.println("Update completed");
 
         System.out.println("\n========== TEST 6: sellerDelete ==========");
-        System.out.print("Enter ID for deletion: ");
-        int id = sc.nextInt();
-        sellerDao.deleteById(id);
-        System.out.println("Seller deleted");
+//        System.out.print("Enter ID for deletion: ");
+//        int id = sc.nextInt();
+//        sellerDao.deleteById(id);
+//        System.out.println("Seller deleted");
 
         System.out.println("\n========== TEST 7: departmentInsert ==========");
-        Department newDep = new Department(null, "Peripherals");
-        departmentDao.insert(newDep);
-        System.out.println("Inserted! New ID = " + newDep.getId());
+//        Department newDep = new Department(null, "Peripherals");
+//        departmentDao.insert(newDep);
+//        System.out.println("Inserted! New ID = " + newDep.getId());
 
+        System.out.println("\n========== TEST 8: departmentFindById ==========");
+        dep = departmentDao.findById(6);
+        System.out.println(dep);
+
+        System.out.println("\n========== TEST 9: departmentFindAll ==========");
+        List<Department> departments = departmentDao.findAll();
+        departments.forEach(i -> System.out.println(i));
 
         sc.close();
     }
